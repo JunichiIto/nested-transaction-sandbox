@@ -6,7 +6,8 @@ class Blog < ApplicationRecord
   private
 
   def add_initial_comment
-    comment = comments.new(content: 'Great!')
+    content = title == 'foo' ? '' : 'Great!'
+    comment = comments.new(content: content)
     comment.save!
   end
 end
