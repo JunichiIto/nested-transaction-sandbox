@@ -6,8 +6,8 @@ class Blog < ApplicationRecord
   private
 
   def add_initial_comment
-    content = title == 'foo' ? '' : 'Great!'
-    comment = comments.new(content: content)
+    comment = comments.new
+    # commentのバリデーションエラーで例外が発生する
     comment.save!
   end
 end
